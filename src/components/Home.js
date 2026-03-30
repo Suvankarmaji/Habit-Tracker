@@ -60,7 +60,7 @@ function Home() {
       
       <footer>
         <div className="container">
-          <p>&copy; 2025 Habit Tracker. All rights reserved.</p>
+          <p>&copy; 2026 Habit Tracker. All rights reserved.</p>
         </div>
       </footer>
     </div>

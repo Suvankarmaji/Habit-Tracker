@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 function HabitTracker() {
@@ -504,6 +505,10 @@ function HabitTracker() {
       </div>
       
       <div className="container">
+        <div className="dashboard-nav-top">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/Videos" className="nav-link">Videos</Link>
+        </div>
         <h1 className="title">Simple Life Dashboard</h1>
         
         <div className="dashboard-grid">
@@ -1074,6 +1079,35 @@ function HabitTracker() {
             <div className="pomo-footer">
               Sessions today: <span className="pomo-count">{pomodoro.sessionsCompleted}</span>
             </div>
+          </div>
+        </div>
+
+        {/* Video Section */}
+        <div className="card video-card" style={{ marginTop: '24px' }}>
+          <div className="card-header">
+            <h2>🎥 Focused Learning Videos</h2>
+          </div>
+          <div className="habit-video-grid">
+            <iframe
+              src="https://www.youtube.com/embed/AETFvQonfV8"
+              allowFullScreen
+              title="video0"
+            ></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/Wcs2PFz5q6g"
+              allowFullScreen
+              title="video1"
+            ></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/fH7N9YRxMYc"
+              allowFullScreen
+              title="video2"
+            ></iframe>
+            <iframe
+              src="https://www.youtube.com/embed/Hu4Yvq-g7_Y"
+              allowFullScreen
+              title="video3"
+            ></iframe>
           </div>
         </div>
       </div>

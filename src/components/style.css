@@ -1055,3 +1055,12 @@ select {
   background: #fff0f0;
   border-color: #ff6b6b;
 }
+
+/* Top Navigation */
+.dashboard-nav-top { display: flex; gap: 20px; margin-bottom: 10px; }
+.nav-link { color: #2e86de; text-decoration: none; font-weight: 500; font-size: 14.5px; }
+.nav-link:hover { text-decoration: underline; }
+/* Video Grid */
+.habit-video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 10px; }
+.habit-video-grid iframe { width: 100%; height: 150px; border-radius: 8px; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.video-card { overflow: visible; }
