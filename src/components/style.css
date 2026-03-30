@@ -1,0 +1,1057 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Segoe UI';
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header styles */
+.wave-header {
+  width: 100%;
+  height: 120px;
+  background-color: #0ee919;
+  border-radius: 0 0 0 70%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.spiral-icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  stroke: #de2e95;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.title {
+  margin-bottom: 24px;
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Dashboard grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 600px;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dashboard-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  stroke: #2e86de;
+  fill: none;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Habit tracker styles */
+.habit-table-container {
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+td {
+  font-size: 14.5px;
+}
+
+.habit-name {
+  text-align: left;
+}
+
+tbody tr {
+  border-top: 1px solid #f1f1f1;
+}
+
+.checkbox-custom {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+.checkbox-custom:checked {
+  background-color: #2e86de;
+  border-color: #2e86de;
+}
+
+.checkbox-custom:checked::after {
+  content:'\2714';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Progress bars styles */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  gap:13px;
+}
+
+.progress-item {
+  width: 100%;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-value {
+  height: 100%;
+  background-color: #2e86de;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+/* Priorities and Notes styles */
+.checklist, .bullet-list {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+.checklist li, .bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  font-size: 14.5px;
+  position: relative;
+}
+
+.checklist li:hover .delete-btn,
+.bullet-list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.checkbox {
+  margin-right: 0.5rem;
+  margin-top: 3px;
+}
+
+.priority-label {
+  flex-grow: 1;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.priority-label.completed {
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.bullet-list li::before {
+  content: '\27A4';
+  margin-left: 16px;
+  margin-right: 8px;
+  font-size: 15px;
+  color: #181a1b;
+}
+
+.delete-btn {
+  opacity: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ccc;
+  transition: opacity 0.2s, color 0.2s;
+  margin-left: auto;
+}
+
+.delete-btn:hover {
+  color: #ff6b6b;
+}
+
+/* Input group styles */
+.input-group {
+  display: flex;
+  margin-top: 8px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-add {
+  background: none;
+  border: none;
+  color: #2e86de;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.plus-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #2e86de;
+  fill: none;
+  margin-right: 4px;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  font-size: 20px;
+  color: #2e86de;
+}
+
+.plus-icon-sm {
+  width: 14px;
+  height: 14px;
+  stroke: #2e86de;
+  fill: none;
+}
+
+/* Clock widget styles */
+.clock-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 4px solid #ddd;
+  border-radius: 50%;
+  margin: 50px auto;
+  background: white;
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+.hour-hand {
+  width: 4px;
+  height: 30px;
+  background: #333;
+  z-index: 3;
+}
+
+.minute-hand {
+  width: 2px;
+  height: 40px;
+  background: #555;
+  z-index: 2;
+}
+
+.second-hand {
+  width: 1px;
+  height: 45px;
+  background: #2e86de;
+  z-index: 1;
+}
+
+.center-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #2e86de;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.number {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #444;
+  transform: translate(-50%, -50%);
+}
+
+.digital-time {
+  text-align: center;
+  margin-top: 15px;
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+/* Weekly tasks styles */
+.section-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.tasks-table-container {
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+#tasks-table th {
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.task-checkbox {
+  margin-right: 8px;
+}
+
+.task-name {
+  display: flex;
+  align-items: center;
+}
+
+.task-name.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.not-started {
+  background-color: #ffecec;
+  color: #ff6b6b;
+}
+
+.in-progress {
+  background-color: #fff7e6;
+  color: #ffb142;
+}
+
+.done {
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+.category-personal {
+  color: #ffb142;
+}
+
+.category-work-school {
+  color: #2e86de;
+}
+
+.category-health-wellness {
+  color: #4caf50;
+}
+
+.action-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.btn-add-sm {
+  background: none;
+  border: none;
+  color: #2e86de;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size:13px;
+}
+
+.delete-task-btn {
+  background-color: #ff4b4b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s;
+}
+
+.delete-task-btn:hover {
+  background-color: #e63e3e;
+  transform: scale(1.05);
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: modalFade 0.3s;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.close-modal {
+  font-size: 24px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close-modal:hover {
+  color: #333;
+}
+
+.modal-body {
+  padding: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #2e86de;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #1c71c7;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .wave-header {
+    height: 100px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+  
+  .card {
+    padding: 12px;
+  }
+  
+  .habit-table-container,
+  .tasks-table-container {
+    font-size: 14px;
+  }
+}
+
+/* Fitness Tracker styles */
+.fitness-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fitness-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fitness-label {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.water-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.water-btn {
+  background-color: #e3f2fd;
+  color: #2e86de;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.water-btn:hover {
+  background-color: #bbdefb;
+}
+
+.water-count {
+  font-size: 14.5px;
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+}
+
+.fitness-input {
+  width: 80px;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* Smart Alerts */
+.alerts-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 300px;
+  max-width: calc(100vw - 40px);
+}
+
+.smart-alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideInRight 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-left: 4px solid #ddd;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.smart-alert-info {
+  border-left-color: #3498db;
+}
+
+.smart-alert-warning {
+  border-left-color: #f1c40f;
+}
+
+.smart-alert-danger {
+  border-left-color: #e74c3c;
+}
+
+.smart-alert-content {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #333;
+  flex-grow: 1;
+  margin-right: 12px;
+}
+
+.smart-alert-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+}
+
+.smart-alert-close:hover {
+  color: #333;
+}
+
+/* Dashboard Bottom Row */
+.dashboard-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  grid-auto-rows: minmax(300px, auto);
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.widget-card {
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  .dashboard-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mood Tracker */
+.mood-tracker {
+  display: flex;
+  flex-direction: column;
+}
+
+.mood-week {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.mood-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.day-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.emoji-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.emoji {
+  cursor: pointer;
+  font-size: 18px;
+  filter: grayscale(100%) opacity(0.4);
+  transition: all 0.2s;
+  padding: 4px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.emoji:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.2);
+}
+
+.emoji.selected {
+  filter: grayscale(0%) opacity(1);
+  border-color: #4285f4;
+  transform: scale(1.1);
+  background: rgba(66, 133, 244, 0.1);
+}
+
+.mood-legend {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.mood-trend-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.mood-trend-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.trend-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 12%;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.trend-fill {
+  width: 100%;
+  border-radius: 4px;
+  transition: height 0.4s ease, background-color 0.4s ease;
+}
+
+.trend-day {
+  font-size: 10px;
+  color: #999;
+}
+
+/* Finance Tracker */
+.finance-summary {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.finance-box {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.finance-box.income { background-color: #e8f5e9; color: #2e7d32; }
+.finance-box.spent { background-color: #ffebee; color: #c62828; }
+.finance-box.balance { background-color: #e3f2fd; color: #1565c0; }
+
+.f-label {
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.f-val {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.finance-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.finance-form input, .finance-form select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  flex: 1;
+  min-width: 80px;
+}
+
+.btn-f-add {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.budget-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.budget-label {
+  width: 80px;
+  font-size: 13px;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.budget-bar-bg {
+  flex: 1;
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  margin: 0 12px;
+  overflow: hidden;
+}
+
+.budget-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-good { background-color: #2ecc71; }
+.progress-warning { background-color: #f39c12; }
+.progress-danger { background-color: #e74c3c; }
+
+.budget-perc {
+  font-size: 12px;
+  color: #777;
+  width: 30px;
+  text-align: right;
+}
+
+/* Pomodoro Timer */
+.pomodoro-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pomo-btn {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.pomo-btn.active {
+  background: #4285f4;
+  color: white;
+  border-color: #4285f4;
+}
+
+.pomodoro-display {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.pomo-circle {
+  width: 180px;
+  height: 180px;
+  border: 8px solid #4285f4;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 20px rgba(66, 133, 244, 0.1);
+}
+
+.pomo-time {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1;
+}
+
+.pomo-mode-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.pomodoro-task input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.pomodoro-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.pomo-action-btn {
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.start-btn {
+  background-color: #f39c12;
+  color: white;
+}
+
+.reset-btn {
+  background-color: #eee;
+  color: #555;
+}
+
+.pomo-footer {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+}
+
+.pomo-count {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+/* Habit Delete Button */
+.btn-del-habit {
+  background: transparent;
+  color: #ff6b6b;
+  border: 1px solid transparent;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.btn-del-habit:hover {
+  background: #fff0f0;
+  border-color: #ff6b6b;
+}
